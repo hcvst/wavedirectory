@@ -1,0 +1,26 @@
+{{extend 'base.html'}}
+
+<div class="span-8 prepend-1 colborder">
+    Please wait a moment for the wave to load. Once loaded you can 
+    <a href="javascript:wavePanel.addParticipant()">add yourself</a> as participant (buggy!).
+    Alternatively <a target="_googlewave" href="https://wave.google.com/wave/#restored:wave:{{=encoded_waveid}}">open</a> 
+	this wave in Google's wave browser.
+</div>
+
+<div class="span-13 append-1 last">
+    <img class='align_left' src="{{=URL(r=request, c='static', f='media/bot.png')}}" alt='botdirectory'/>	
+    Coming soon to a wave near you. <strong>www.botdirectory.net</strong><br />
+    <a target="_twitter" href="http://twitter.com/wavedirectory">Follow us</a> on twitter for updates.
+</div>
+
+<div class="span-24 last"><br /><hr /><br /></div>
+<div class="span-22 prepend-1 append-1 last" id="waveframe">Loading wave ...</div>
+
+<script src="http://wave-api.appspot.com/public/embed.js" type="text/javascript"></script>
+<script type="text/javascript">
+  var wavePanel = new WavePanel('https://wave.google.com/wave/');
+  wavePanel.setUIConfig('white', 'black', 'Arial', '13px');
+  wavePanel.loadWave('{{=fun_decode(encoded_waveid)}}');
+  wavePanel.init(document.getElementById('waveframe'));
+</script>
+

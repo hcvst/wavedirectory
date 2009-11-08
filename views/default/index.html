@@ -1,0 +1,49 @@
+{{extend 'base.html'}}
+
+<div class="span-15 prepend-1 colborder">
+    <div class="span-15 last">Sort by  
+    {{=B('Votes') if order_by==C_VOTES else A('Votes', _href=URL(r=request, args=[C_VOTES]) )}} | 
+    {{=B('Users') if order_by==C_PARTICIPANTS else A('Users', _href=URL(r=request, args=[C_PARTICIPANTS]) )}} | 
+    {{=B('Date') if order_by==C_ADDED else A('Date', _href=URL(r=request, args=[C_ADDED]) )}}
+    <br /><br />    
+    </div>
+   
+{{for w in waves:}}
+    <div class="span-15 last waverow last">
+        <div class="span-4 statsbox">
+	    <div class="stats frame"><img src="{{=w.str_avatar}}" width="48" height="48" alt="wave avatar"/></div>
+	    <div class="stats">{{=w.str_votes}}<br />Votes</div>
+	    <div class="stats">{{=w.str_participants}}<br />User</div>
+	</div>
+	
+	
+	<div class="span-11 last">
+	    {{=A(w.str_title, _href=URL(r=request, f='wave', args=[hexlify(w.key().name())]) )}}
+	</div>
+    </div>
+{{pass}}
+	
+{{if next_page:}}
+    <div class="span-5 prepend-10 last">
+	{{=A('next >>', _href=next_page)}} 
+    </div>
+{{pass}}	
+</div>
+
+<div class="span-6 append-1 last">
+        <p>
+	<img class='align_left' src="{{=URL(r=request, c='static', f='media/waves.png')}}" alt='waves'/>
+	So you have got your Google Wave invitation at last? Now you are probably eager to start waving. I certainly was.
+	Wavedirectory is a directory of public waves. To add your wave to this directory invite wavedirectory@appspot.com.
+	Note, that this site is still under heavy development and many functions remain to be implemented.
+	<a target="_twitter" href="http://twitter.com/wavedirectory">Follow us</a> on twitter for updates!
+	</p>
+	<br />
+	<p>
+	<img class='align_left' src="{{=URL(r=request, c='static', f='media/fire.png')}}" alt='flame'/><br />
+	Wavedirectory now has a simple JSON API to read the directory contents programmatically. Read more on how
+	to use the API in this 
+	<a href="http://wavedirectory.appspot.com/init/default/wave/676f6f676c65776176652e636f6d21772b7232565747576c6944">wave</a>.
+	</p>
+	
+</div>

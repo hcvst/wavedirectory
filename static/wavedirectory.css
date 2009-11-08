@@ -1,0 +1,34 @@
+
+
+.waverow {
+	margin-bottom:18px;
+}
+
+.waverow .statsbox {
+}
+
+.statsbox .stats {
+	float:left;
+	margin-right:10px;
+	text-align:center;
+}
+
+.frame {
+	border:1px solid #eee;
+	padding:2px;
+}
+
+.stats img {
+	border:1px solid #eee;
+}
+
+#waveframe {
+	height:600px;
+	padding:10px;
+	border:1px solid #eee;
+}
+
+.align_left {
+	float:left;
+	margin-right:10px;
+}

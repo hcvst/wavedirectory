@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+	
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="{{=T.accepted_language or 'en'}}">
+    <head>
+    <title>Wavedirectory</title>
+    <meta name="description" content="A directory of public Google waves sortable by number of participants, votes and recentcy." />
+    <meta name="keywords" content="google wave directory, public waves, public google waves, wave extensions, wave robot, robot, bot, extension" />
+    <meta name="author" content="Hans Christian v. Stockhausen" />
+    <meta name="Distribution" content="Global" />
+    <meta name="Rating" content="General" />
+    <meta name="Robots" content="INDEX,FOLLOW" />
+    <meta name="Revisit-after" content="1 Day" />
+		<link rel="stylesheet" href="{{=URL(r=request, c='static', f='lib/blueprint/screen.css')}}" type="text/css" media="screen, projection" />
+		<link rel="stylesheet" href="{{=URL(r=request, c='static', f='lib/blueprint/plugins/fancy-type/screen.css')}}" type="text/css" media="screen, projection" />
+		<!-- link rel="stylesheet" href="{{=URL(r=request, c='static', f='lib/blueprint/plugins/link-icons/screen.css')}}" type="text/css" media="screen, projection" / -->
+		<link rel="stylesheet" href="{{=URL(r=request, c='static', f='wavedirectory.css')}}" type="text/css" media="screen, projection" />
+        <link rel="stylesheet" href="{{=URL(r=request, c='static', f='lib/blueprint/print.css')}}" type="text/css" media="print" />			
+    </head>
+	
+    <body>
+    	<div class="container xshowgrid">
+    		<div class="span-24 last"><br /><br /></div>
+    		<div class="span-4"><a href='/'><img src="{{=URL(r=request, c='static', f='media/logo.png')}}" alt="wave directory logo" /></a></div>
+			<div class="span-13"><h1>Wavedirectory.net</h1><h2 class="alt">Public Google Waves</h2></div>
+            <div class="span-6 append-1 last">
+            	<div class="box">To add your wave to this directory invite wavedirectory@appspot.com.</div>
+            </div>
+			<div class="span-24 last"><br /><hr /></div>
+
+			   {{include}}
+            			
+			<div class="span-24 last"><br /><br /><hr /></div>
+			<div class="span-17 quiet">
+			    <a href="http://xri.net/=hc">H.C. v. Stockhausen</a>, Kellergrundweg 7, 61476 Kronberg, Germany<br />
+			    Powered by <a href="http://web2py.com">web2py</a> and <a href="http://appengine.google.com">Google Appengine</a>.
+			</div>
+			<div class="span-6 append-1 quiet last">&copy; 2009 wavedirectory.net<br />Artwork licensed with shutterstock.com</div>
+		</div>
+		<!-- Google Analytics -->
+		<script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+        </script>
+        <script type="text/javascript">
+            try {
+                var pageTracker = _gat._getTracker("UA-3834652-12");
+                pageTracker._trackPageview();
+                } catch(err) {}
+		</script>
+    </body>
+</html>
+

@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Module>
+  <ModulePrefs title="Wavedirectory.net"
+               author="Hans Christian v. Stockhausen"
+               author_email="hc@vst.io">
+    <Require feature="wave" /> 
+    <Require feature="dynamic-height" />
+    <Require feature="locked-domain" />
+  </ModulePrefs>
+  <Content type="html">
+<![CDATA[
+
+<style>
+.sprite{
+	background-image:url(data:image/png;base64,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);
+	height:32px;
+	width:23px;
+	vertical-align:middle;
+	border:0;
+	cursor:hand;
+}
+
+
+.logo{
+	width:32px;
+	margin-left:10px;
+	
+}
+
+.upactive{
+	background-position:-47px -4px;	
+}
+
+.downactive{
+	background-position:-74px 2px;
+	margin-right:10px;
+}
+
+.up{
+	background-position:-101px -4px;
+}
+
+.down{
+	background-position:-127px 2px;
+	margin-right:10px;
+	}
+	
+.votes{
+	color:#b2b2b2;
+}
+
+#votescount{
+	color:#29ABE2;
+	font-weight:bold;
+}
+
+#votebox{
+	float:right;
+	text-align:center;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:1.2em;
+	border:1px dotted #eee;
+	padding:4px;
+	width:256px;
+}
+</style>
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+<script type="text/javascript">
+var encoded_waveid = "{{=encoded_waveid}}";
+var creator = "{{=creator}}";
+
+function getUserVote(state, viewerId){
+	if (v = state.get(viewerId)) {
+	    uservote = parseInt(v);
+	} 
+	else {
+	    uservote = 0;
+	}
+	return uservote;
+}
+
+function vote(vote){
+	var state = wave.getState();
+	var viewerId = wave.getViewer().getId();
+    var uservote = getUserVote(state, viewerId);
+	var newuservote = uservote + vote;
+	if (newuservote <= 1 && newuservote >= -1){
+        state.submitValue(viewerId, newuservote);
+	}
+}
+
+function getTotalVotes(state){
+    var total_votes = 0;
+    var keys = state.getKeys();
+    for (var i = 0; i < keys.length; ++i) {
+        var voter = keys[i];
+		if (voter.indexOf("@") != -1) {
+			total_votes += parseInt(state.get(voter));
+		}
+	}
+    return total_votes;
+}
+
+function updateWidget(state){
+    var total_votes = getTotalVotes(state);
+	var viewerId = wave.getViewer().getId();
+	var uservote = getUserVote(state, viewerId);
+	$("#votescount").fadeOut("fast").text(total_votes).fadeIn("fast");
+	u = $("#uparrow");
+	d = $("#downarrow");
+	switch(uservote) {
+	    case 0: u.removeClass("upactive").addClass("up"); 
+		        d.removeClass("downactive").addClass("down");
+				break;
+		case 1: u.removeClass("up").addClass("upactive"); 
+				break;
+		case -1: d.removeClass("down").addClass("downactive");	
+	}
+}
+
+function updateDirectory(state){
+    var total_votes = getTotalVotes(state);
+    var thumbnail_url = wave.getParticipantById(creator).getThumbnailUrl();
+    url =  '{{=C_SERVER + URL(r=request, c='gadget', f='update')}}'
+    url += '?w=' + encoded_waveid;
+    url += '&v=' + total_votes;
+    url += '&t=' + thumbnail_url;
+    gadgets.io.makeRequest(url, function() {}, {});
+}
+
+function stateUpdated() {
+    var state = wave.getState();
+    updateWidget(state);
+	updateDirectory(state);
+}
+
+function init() {
+  if (wave && wave.isInWaveContainer()) {
+    wave.setStateCallback(stateUpdated);
+    gadgets.window.adjustHeight();
+  }
+}
+
+
+gadgets.util.registerOnLoadHandler(init);
+</script>
+
+<div id="votebox">
+    {{transparent_gif = C_SERVER + URL(r=request, c='static', f='media/transparent.gif')}}
+    <img id="uparrow" src="{{=transparent_gif}}" class="sprite up" onClick="vote(1)" alt="Vote up"/>
+    <img id="downarrow" src="{{=transparent_gif}}" class="sprite down"  onClick="vote(-1)" alt="Vote down"/>
+    <span id="votescount">--</span><span class="votes"> Votes</span>
+    <a target="_wavedirectory" href="http://wavedirectory.net">
+        <img src="{{=transparent_gif}}" class="sprite logo" alt="Vists wavedirectory.net in new tab" />
+    </a>
+</div>
+
+  ]]> 
+  </Content>
+</Module>

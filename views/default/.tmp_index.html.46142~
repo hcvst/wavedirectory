@@ -1,0 +1,30 @@
+{{extend 'base.html'}}
+
+<div class="span-15 prepend-1 colborder">
+	
+	{{for w in waves:}}
+	    <div class="span-15 last waverow">
+            <div class="span-1"><img src="{{=w.userurl}}" height="36" alt="wave avatar"/></div>
+	        <div class="span-1">{{=w.votes.split('|')[0]}}<br />Votes</div>
+	        <div class="span-1">{{=w.participants.split('|')[0]}}<br />User</div>
+	        <div class="span-12 last">
+	        	{{=A(w.title, _href=URL(r=request, f='wave', vars={'w':fun_encode(w.key().name())}))}}
+	        </div>
+		</div>
+    {{pass}}
+	
+	{{if next_page_marker:}}
+	    <div class="span-5 prepend-10 last">
+	    	{{=A('next >>', _href=URL(r=request, args=[next_page_marker]))}} 
+	    </div>
+	{{pass}}
+	
+</div>
+
+<div class="span-6 append-1 last">
+	<img class='align_left' src="{{=URL(r=request, c='static', f='media/waves.png')}}" alt='waves'/>
+	So you have got your Google Wave invitation at last? Now you are probably eager to start waving. I certainly was.
+	Wavedirectory is a directory of public waves. To add your wave to this directory invite wavedirectory@appspot.com.
+	Note, that this site is still under heavy development and many functions remain to be implemented.
+	<a target="_twitter" href="http://twitter.com/wavedirectory">Follow us</a> on twitter for updates!
+</div>
