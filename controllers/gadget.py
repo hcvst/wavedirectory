@@ -10,8 +10,11 @@ def wavedirectory():
 def update():
     wave_id = request.vars.get('w')
     wave = Wave.get_by_key_name(wave_id)
-    if not wave and C_RECOVERY_MODE:
-        wave = Wave(key_name = wave_id)
+    if not wave:
+        if C_RECOVERY_MODE:
+            wave = Wave(key_name = wave_id)
+        else:
+            return
     if request.vars.get('t'):
         wave.str_avatar = request.vars.get('t')
     wave.str_votes = request.vars.get('v', '0')

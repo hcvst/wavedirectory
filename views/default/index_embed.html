@@ -1,0 +1,34 @@
+{{extend 'base_embed.html'}}
+
+    <div class="bar">Sort by  
+    {{=B('Votes') if order_by==C_VOTES else A('Votes', _href=URL(r=request, args=[C_VOTES]) )}} | 
+    {{=B('Users') if order_by==C_PARTICIPANTS else A('Users', _href=URL(r=request, args=[C_PARTICIPANTS]) )}} | 
+    {{=B('Date') if order_by==C_ADDED else A('Date', _href=URL(r=request, args=[C_ADDED]) )}}
+    <br /><br />    
+    </div>
+
+{{count=0}}
+{{for w in waves:}}
+    {{count+=1}}
+        {{if count==6:}}
+	<div class="note">
+	To add your wave to this directory invite wavedirectory@appspot.com as participant to your wave.</div>
+	{{pass}}
+        <div class="statsbox">
+	    <div class="stats frame"><img src="{{=w.str_avatar}}" width="48" height="48" alt="wave avatar"/></div>
+	    <div class="stats">{{=w.str_votes}}<br />Votes</div>
+	    <div class="stats">{{=w.str_participants}}<br />User</div>
+	    <div class="stats">
+	    {{=A(w.str_title, _href=URL(r=request, f='wave_embed', args=[hexlify(w.key().name())]) )}}
+	    </div>
+	</div>
+{{pass}}
+	
+{{if next_page:}}
+    <div class="bar">
+	{{=A('next >>', _href=next_page)}} 
+    </div>
+{{pass}}	
+
+
+<div class="footer">Data provided by <a href="http://wavedirectory.net">Wavedirectory.net</a></div>

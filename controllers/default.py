@@ -33,15 +33,25 @@ def wave():
     return dict(waveid=waveid,
                 quoted_waveid=qp(qp((waveid)))) # no idea why i need to quote twice
 
+
+
+# a light version for GoogleWaveDirectory.com
+def index_embed():
+    return index()
+
+def wave_embed():
+    return wave()
+
+
 # create some testdata
-#def testdata():
-    #import random
-    #import re
-    #for i in range(20):
-        #x = str(i)
-        #w = Wave(key_name = x)
-        #w.str_title = "Hallo " + x
-        #w.str_votes = random.randint(0,100)
-        #w.str_participants = random.randint(0,100)
-        #w.str_timestamp = re.sub(r'[^0-9]', '',str(datetime.now()))
-        #w.put()
+def testdata():
+    import random
+    import re
+    for i in range(20):
+        x = str(i)
+        w = Wave(key_name = x)
+        w.str_title = "Hallo " + x
+        w.str_votes = random.randint(0,100)
+        w.str_participants = random.randint(0,100)
+        w.str_timestamp = re.sub(r'[^0-9]', '',str(datetime.now()))
+        w.put()

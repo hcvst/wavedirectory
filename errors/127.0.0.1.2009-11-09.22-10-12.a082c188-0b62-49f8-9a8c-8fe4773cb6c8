@@ -1,0 +1,17 @@
+(dp1
+S'output'
+p2
+S''
+sS'layer'
+p3
+S'/home/hcvst/dev/web2py/applications/init/models/1_cache.py'
+p4
+sS'code'
+p5
+S'# coding: utf-8\n# Hans Christian v. Stockhausen, hc@vst.io, 2009-11-05\n\nfrom gluon.contrib.memdb import *\nfrom gluon.contrib.gae_memcache import MemcacheClient\nfrom google.appengine.api.memcache import Client\n\ncache.ram=cache.disk=MemcacheClient(request) \nsession.connect(request,response,db=MEMDB(Client())) '
+p6
+sS'traceback'
+p7
+S'Traceback (most recent call last):\n  File "/home/hcvst/dev/web2py/gluon/restricted.py", line 184, in restricted\n    exec ccode in environment\n  File "/home/hcvst/dev/web2py/applications/init/models/1_cache.py", line 5, in <module>\n    from gluon.contrib.gae_memcache import MemcacheClient\n  File "/home/hcvst/dev/web2py/gluon/contrib/gae_memcache.py", line 12, in <module>\n    from google.appengine.api.memcache import Client\nImportError: No module named google.appengine.api.memcache\n'
+p8
+s.

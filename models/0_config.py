@@ -2,7 +2,7 @@
 # Hans Christian v. Stockhausen, hc@vst.io, 2009-11-05
 
 # Configuration constants
-C_RECOVERY_MODE = True # insert waves into db outside robot.OnWaveletSelfAdded
+C_RECOVERY_MODE = False # insert waves into db outside robot.OnWaveletSelfAdded
                        # use after dropping DB to allow Gadget and OnParticipantsChanged
                        # to repopulate the DB. 
 
@@ -31,7 +31,7 @@ C_ADDED = 'a'
 C_ORDERING = {C_VOTES:'_str_votes',
               C_PARTICIPANTS:'_str_participants',
               C_ADDED:'str_timestamp'}
-C_DEFAULT_ORDER = C_VOTES
+C_DEFAULT_ORDER = C_PARTICIPANTS
 
 #API
 C_API_NAME = 'wavedirectory.net'

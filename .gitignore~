@@ -1,4 +1,3 @@
 *.png
 *.pyc
-*.ico
 modules/* # contains only waveapi - see wiki for a small modification

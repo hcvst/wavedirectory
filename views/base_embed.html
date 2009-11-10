@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+	
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="{{=T.accepted_language or 'en'}}">
+    <head>
+    <title>Wavedirectory</title>
+    <meta name="description" content="A directory of public Google waves sortable by number of participants, votes and recentcy." />
+    <meta name="keywords" content="google wave directory, public waves, public google waves, wave extensions, wave robot, robot, bot, extension" />
+    <meta name="author" content="Hans Christian v. Stockhausen" />
+    <meta name="Distribution" content="Global" />
+    <meta name="Rating" content="General" />
+    <meta name="Robots" content="INDEX,FOLLOW" />
+    <meta name="Revisit-after" content="1 Day" />
+    <style>
+    
+body{
+    font-family:arial;
+    font-size:0.8em;
+}
+
+a {
+    color:#0077CB;
+}
+
+
+.statsbox{
+    height:54px;
+    clear:left;
+    margin-bottom:18px
+}
+
+.note {
+padding:9px;
+clear:left;
+border-top:1px solid #eee;
+border-bottom:1px solid #eee;
+margin-bottom:18px;
+font-weight:bold;
+}
+
+.bar{
+border-bottom:1px solid #eee;
+margin-bottom:18px;
+padding:9px;
+}
+.statsbox .stats {
+	float:left;
+	margin-right:15px;
+	
+}
+
+.frame {
+	border:1px solid #eee;
+	padding:2px;
+}
+
+.stats img {
+	border:1px solid #eee;
+}
+
+.footer {
+    margin-top:9px;
+    font-size:0.7em;
+}
+    
+#waveframe {
+	height:600px;
+	padding:9px;
+}
+
+.align_left {
+	float:left;
+	margin-right:10px;
+}
+    </style>
+    </head>
+	
+    <body>
+    	<div class="container">
+	    {{include}}
+	</div>
+		
+    <!-- Google Analytics -->
+    <!-- script type="text/javascript">
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+    try {
+	var pageTracker = _gat._getTracker("UA-3834652-12");
+	pageTracker._trackPageview();
+    } catch(err) {}
+    </script -->
+    </body>
+</html>

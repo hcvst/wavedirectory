@@ -77,8 +77,11 @@ class MyRobot(robot.Robot):
         wl = context.GetRootWavelet()
         wave_id = wl.GetWaveId()
         wave = Wave.get_by_key_name(wave_id)
-        if not wave and C_RECOVERY_MODE:
-            wave = Wave(key_name = wave_id)
+        if not wave:
+            if C_RECOVERY_MODE:
+                wave = Wave(key_name = wave_id)
+            else:
+                return
         if wl.GetTitle(): wave.str_title = wl.GetTitle()
         wave.str_participants = len(wl.GetParticipants())-2
         wave.put()
